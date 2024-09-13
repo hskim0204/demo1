@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8" />
+<title>List View</title>
+</head>
+<body>
+ 
+    <div>
+        <H1>DB 연동 확인</H1>
+ 
+        <table border="1">
+            <thead>
+                <tr>
+                    <th>DEPTNO</th>
+                    <th>DNAME</th>
+					<th>LOC</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr th:each="row:${Alllist}">
+                    <th th:text="${row.DEPTNO}"></th>
+                    <th th:text="${row.DNAME}"></th>
+					<th th:text="${row.LOC}"></th>
+ 
+                </tr>
+            </tbody>
+ 
+        </table>
+ 
+    </div>
+ 
+</body>
+</html>
