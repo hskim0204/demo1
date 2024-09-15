@@ -44,7 +44,7 @@ public class TestTableController {
     	String dName = "";
     	if(map.get("dName") != null) {
     		System.out.println("map.get(dName)==>"+ map.get("dName"));
-    		dName = map.get(dName).toString();
+    		dName = map.get("dName").toString();
     	}
         
         List<Map<String, Object>> AllList = testtableService.SelectAllList(dName);        
