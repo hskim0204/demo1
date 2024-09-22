@@ -26,4 +26,9 @@ public class TestTableServiceImpl implements TestTableService{
         testTableMapper.write(ttv);
     }
 
+    @Override
+    public void update(TestTableVo ttv) {
+        testTableMapper.update(ttv);
+    }
+
 }

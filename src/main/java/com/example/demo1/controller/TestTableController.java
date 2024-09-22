@@ -56,4 +56,12 @@ public class TestTableController {
         testtableService.write(ttv);
     }
 
+
+    @PutMapping("/update")
+    @CrossOrigin(origins = "*", methods = RequestMethod.PUT)
+    public void update(@RequestBody TestTableVo ttv) {
+        System.out.println("TestTableVo==>"+ ttv.toString());
+        testtableService.update(ttv);
+    }
+
 }

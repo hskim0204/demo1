@@ -9,4 +9,6 @@ public interface TestTableService { //select * from Test_Table
     public List<Map<String, Object>> SelectAllList(String dName) throws Exception;
 
     public void write(TestTableVo ttv);
+
+    public void update(TestTableVo ttv);
 }
