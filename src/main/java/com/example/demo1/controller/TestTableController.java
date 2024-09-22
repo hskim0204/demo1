@@ -3,11 +3,8 @@ package com.example.demo1.controller;
 import java.util.List;
 import java.util.Map;
 
-import org.springframework.web.bind.annotation.CrossOrigin;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+import com.example.demo1.vo.TestTableVo;
+import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.example.demo1.service.TestTableService;
@@ -50,6 +47,13 @@ public class TestTableController {
         List<Map<String, Object>> AllList = testtableService.SelectAllList(dName);        
         
         return AllList;
+    }
+
+    @PostMapping("/write")
+    @CrossOrigin(origins = "*", methods = RequestMethod.POST)
+    public void write(@RequestBody TestTableVo ttv) {
+        System.out.println("TestTableVo==>"+ ttv.toString());
+        testtableService.write(ttv);
     }
 
 }

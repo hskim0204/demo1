@@ -13,5 +13,12 @@
 			</if>
 		</where>
     </select>
+
+	<insert id="write" parameterType="com.example.demo1.vo.TestTableVo">
+		insert into dept
+		(deptno, dname, loc)
+		values
+		((SELECT NVL(MAX(deptno), 0) + 1 FROM dept), #{dName}, #{loc})
+	</insert>
  
 </mapper>

@@ -2,7 +2,8 @@ package com.example.demo1.service;
 
 import java.util.List;
 import java.util.Map;
- 
+
+import com.example.demo1.vo.TestTableVo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
  
@@ -19,5 +20,10 @@ public class TestTableServiceImpl implements TestTableService{
         // TODO Auto-generated method stub
         return testTableMapper.SelectAllList(dName);
     }
- 
+
+    @Override
+    public void write(TestTableVo ttv) {
+        testTableMapper.write(ttv);
+    }
+
 }
