@@ -14,8 +14,9 @@ import io.swagger.v3.oas.annotations.tags.Tag;
 import jakarta.annotation.Resource;
 
 @RestController
-@Tag(name="dept", description="부서 검색 서비스")
-@CrossOrigin(origins = "*", methods = RequestMethod.GET) 
+@Tag(name="depts", description="부서 검색 서비스")
+@CrossOrigin(origins = "*", methods = RequestMethod.GET)
+@RequestMapping("/depts")
 public class TestTableController {
 	
     @Resource
@@ -49,7 +50,17 @@ public class TestTableController {
         return AllList;
     }
 
-    @PostMapping("/write")
+    @GetMapping("")
+    public List<TestTableVo> getDepts() {
+        return testtableService.getDepts();
+    }
+
+    @GetMapping("/{deptNo}")
+    public List<TestTableVo> getDeptByDeptNO(@PathVariable("deptNo") String deptNo) {
+        return testtableService.getDeptByDeptNo(deptNo);
+    }
+
+    @PostMapping("")
     @CrossOrigin(origins = "*", methods = RequestMethod.POST)
     public void write(@RequestBody TestTableVo ttv) {
         System.out.println("TestTableVo==>"+ ttv.toString());
@@ -57,7 +68,7 @@ public class TestTableController {
     }
 
 
-    @PutMapping("/update")
+    @PutMapping("")
     @CrossOrigin(origins = "*", methods = RequestMethod.PUT)
     public void update(@RequestBody TestTableVo ttv) {
         System.out.println("TestTableVo==>"+ ttv.toString());

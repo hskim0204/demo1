@@ -14,6 +14,15 @@
 		</where>
     </select>
 
+	<select id="getDepts" parameterType="String" resultType="com.example.demo1.vo.TestTableVo">
+		SELECT * FROM dept getDeptByDeptNo
+	</select>
+
+	<select id="getDeptByDeptNo" parameterType="String" resultType="com.example.demo1.vo.TestTableVo">
+		SELECT * FROM dept
+		where deptNo = #{deptNo}
+	</select>
+
 	<insert id="write" parameterType="com.example.demo1.vo.TestTableVo">
 		insert into dept
 		(deptno, dname, loc)
@@ -24,7 +33,7 @@
 	<update id="update" parameterType="com.example.demo1.vo.TestTableVo">
 		update dept
 		set dname = #{dName},
-			loc = #{loc},
+			loc = #{loc}
 		where deptno = #{deptNo}
 	</update>
  

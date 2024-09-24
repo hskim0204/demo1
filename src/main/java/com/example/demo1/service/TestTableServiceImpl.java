@@ -31,4 +31,14 @@ public class TestTableServiceImpl implements TestTableService{
         testTableMapper.update(ttv);
     }
 
+    @Override
+    public List<TestTableVo> getDepts() {
+        return testTableMapper.getDepts();
+    }
+
+    @Override
+    public List<TestTableVo> getDeptByDeptNo(String deptNo) {
+        return testTableMapper.getDeptByDeptNo(deptNo);
+    }
+
 }

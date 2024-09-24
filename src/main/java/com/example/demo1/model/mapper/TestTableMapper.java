@@ -18,4 +18,8 @@ public interface TestTableMapper {
     public List<Map<String, Object>> SelectAllList(String dName) throws Exception;
     public void write(TestTableVo ttv);
     public void update(TestTableVo ttv);
+
+    public List<TestTableVo> getDepts();
+
+    public List<TestTableVo> getDeptByDeptNo(String deptNo);
 }
