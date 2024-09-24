@@ -41,4 +41,9 @@ public class TestTableServiceImpl implements TestTableService{
         return testTableMapper.getDeptByDeptNo(deptNo);
     }
 
+    @Override
+    public void delete(String deptNo) {
+        testTableMapper.delete(deptNo);
+    }
+
 }

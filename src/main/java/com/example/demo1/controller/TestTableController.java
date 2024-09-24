@@ -50,7 +50,7 @@ public class TestTableController {
         return AllList;
     }
 
-    @GetMapping("")
+    @GetMapping
     public List<TestTableVo> getDepts() {
         return testtableService.getDepts();
     }
@@ -60,7 +60,7 @@ public class TestTableController {
         return testtableService.getDeptByDeptNo(deptNo);
     }
 
-    @PostMapping("")
+    @PostMapping
     @CrossOrigin(origins = "*", methods = RequestMethod.POST)
     public void write(@RequestBody TestTableVo ttv) {
         System.out.println("TestTableVo==>"+ ttv.toString());
@@ -68,11 +68,18 @@ public class TestTableController {
     }
 
 
-    @PutMapping("")
+    @PutMapping
     @CrossOrigin(origins = "*", methods = RequestMethod.PUT)
     public void update(@RequestBody TestTableVo ttv) {
         System.out.println("TestTableVo==>"+ ttv.toString());
         testtableService.update(ttv);
+    }
+
+
+    @DeleteMapping("/{deptNo}")
+    @CrossOrigin(origins = "*", methods = RequestMethod.DELETE)
+    public void delete(@PathVariable("deptNo") String deptNo) {
+        testtableService.delete(deptNo);
     }
 
 }

@@ -22,4 +22,6 @@ public interface TestTableMapper {
     public List<TestTableVo> getDepts();
 
     public List<TestTableVo> getDeptByDeptNo(String deptNo);
+
+    public void delete(String deptNo);
 }

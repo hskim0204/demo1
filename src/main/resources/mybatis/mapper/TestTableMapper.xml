@@ -36,5 +36,10 @@
 			loc = #{loc}
 		where deptno = #{deptNo}
 	</update>
+
+	<delete id="delete" parameterType="String">
+		delete from dept
+		where deptno = #{deptNo}
+	</delete>
  
 </mapper>

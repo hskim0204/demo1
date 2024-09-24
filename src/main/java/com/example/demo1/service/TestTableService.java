@@ -15,4 +15,6 @@ public interface TestTableService { //select * from Test_Table
     public List<TestTableVo> getDepts();
 
     public List<TestTableVo> getDeptByDeptNo(String deptNo);
+
+    public void delete(String deptNo);
 }
